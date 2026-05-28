@@ -19,7 +19,7 @@
         <span class="nav__brandtext">Lab</span>
       </a>
       <nav class="nav__links" id="navLinks">
-        <a href="#research">Research</a>
+        <a href="#home">Home</a>
         <a href="#people">People</a>
         <a href="#publications">Publications</a>
         <a href="#lectures">Lectures</a>
@@ -32,81 +32,76 @@
   </header>
 
   <main>
-    <!-- ===== Hero ===== -->
-    <section class="hero" id="home">
-      <div class="hero__bg" aria-hidden="true"></div>
-      <div class="container hero__inner">
-        <p class="hero__eyebrow">Hanbat National University · Dept. of AI Software</p>
-        <h1 class="hero__title">
-          Visual Intelligence<br />
-          &amp; Reliability Lab
-        </h1>
-        <p class="hero__lead">
-          We advance visual AI for the real world through research in
-          <strong>computer vision</strong>, <strong>deep learning</strong>, and <strong>reliable AI</strong>.
-        </p>
-        <div class="hero__actions">
-          <a href="#research" class="btn btn--primary">Explore Research</a>
-          <a href="#contact" class="btn btn--ghost">Join the Lab</a>
+    <!-- ===== Home (hero + research) ===== -->
+    <section class="page" id="home">
+      <div class="hero">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="container hero__inner">
+          <p class="hero__eyebrow">Hanbat National University · Dept. of AI Software</p>
+          <h1 class="hero__title">
+            Visual Intelligence<br />
+            &amp; Reliability Lab
+          </h1>
         </div>
       </div>
-    </section>
 
-    <!-- ===== Research ===== -->
-    <section class="section" id="research">
-      <div class="container">
-        <div class="section__head">
-          <span class="section__kicker">Research</span>
-          <h2 class="section__title">What we work on</h2>
-          <p class="section__subtitle">
-            VIR Lab studies how to make visual AI both capable and trustworthy —
-            from perception and generation to robustness and interpretability.
+      <div class="section">
+        <div class="container">
+          <p class="lab-intro">
+            The Visual Intelligence &amp; Reliability Lab (VIR Lab) at Hanbat National University
+            advances visual AI for the real world through research in computer vision,
+            deep learning, and reliable AI.
           </p>
-        </div>
 
-        <div class="research-grid">
-          <article class="research-card">
-            <div class="research-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-            </div>
-            <h3>Visual Intelligence</h3>
-            <p>Building models that perceive, understand, and generate the visual world.</p>
-            <ul>
-              <li>Recognition, Detection &amp; Segmentation</li>
-              <li>Multimodal Learning</li>
-              <li>Generative Models</li>
-            </ul>
-          </article>
+          <div class="section__head" id="research">
+            <h2 class="section__title">Research Interests</h2>
+          </div>
 
-          <article class="research-card">
-            <div class="research-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div class="research-grid">
+            <article class="research-card">
+              <h3>Visual Intelligence</h3>
+              <ul>
+                <li>Recognition, Detection &amp; Segmentation</li>
+                <li>Multimodal Learning</li>
+                <li>Generative Models</li>
+              </ul>
+            </article>
+            <article class="research-card">
+              <h3>Reliability</h3>
+              <ul>
+                <li>Robust Learning from Imperfect Data</li>
+                <li>Out-of-Distribution Generalization</li>
+                <li>Interpretability &amp; Explainability</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="join-card">
+            <div>
+              <h3>We're recruiting!</h3>
+              <p>VIR Lab welcomes motivated students who want to grow as AI researchers and engineers.</p>
             </div>
-            <h3>Reliability</h3>
-            <p>Making AI dependable when data is imperfect and the world shifts.</p>
-            <ul>
-              <li>Robust Learning from Imperfect Data</li>
-              <li>Out-of-Distribution Generalization</li>
-              <li>Interpretability &amp; Explainability</li>
-            </ul>
-          </article>
+            <a href="#contact" class="btn btn--primary">Get in touch</a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ===== People ===== -->
-    <section class="section section--alt" id="people">
+    <section class="page section section--alt" id="people">
       <div class="container">
         <div class="section__head">
-          <span class="section__kicker">People</span>
-          <h2 class="section__title">Meet the team</h2>
-          <p class="section__subtitle">Led by the principal investigator, and growing.</p>
+          <h2 class="section__title">People</h2>
         </div>
 
-        <h3 class="people__group">Principal Investigator</h3>
+        <h3 class="people__group">Faculty</h3>
         <article class="pi-card">
           <div class="pi-card__photo">
             <img src="assets/youngdong-kim.jpg" alt="Youngdong Kim" loading="lazy" />
+            <a href="https://linkedin.com/in/youngdong-kim" target="_blank" rel="noopener" class="pi-card__social" aria-label="LinkedIn profile of Youngdong Kim">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+              <span>LinkedIn</span>
+            </a>
           </div>
           <div class="pi-card__body">
             <h3 class="pi-card__name">Youngdong Kim <span class="pi-card__hangul">김영동</span></h3>
@@ -116,8 +111,8 @@
               <div>
                 <h4>Education</h4>
                 <ul class="tl">
-                  <li><strong>Ph.D.</strong>, Electrical Engineering, KAIST <span>2016–2021</span></li>
-                  <li><strong>M.S.</strong>, Electrical Engineering, KAIST <span>2014–2016</span></li>
+                  <li><strong>Ph.D.</strong>, Electrical Engineering, KAIST <span>2016–2021 · Advisor: Junmo Kim</span></li>
+                  <li><strong>M.S.</strong>, Electrical Engineering, KAIST <span>2014–2016 · Advisor: Seong-Dae Kim</span></li>
                   <li><strong>B.S.</strong>, Electrical Engineering, Sungkyunkwan University <span>2010–2014</span></li>
                 </ul>
               </div>
@@ -129,31 +124,16 @@
                 </ul>
               </div>
             </div>
-
-            <div class="pi-card__links">
-              <a href="mailto:ydkim1293@hanbat.ac.kr" class="chip">ydkim1293@hanbat.ac.kr</a>
-              <a href="https://linkedin.com/in/youngdong-kim" target="_blank" rel="noopener" class="chip">LinkedIn</a>
-            </div>
           </div>
         </article>
-
-        <div class="join-card">
-          <div>
-            <h3>We're recruiting!</h3>
-            <p>VIR Lab welcomes motivated students who want to grow as AI researchers and engineers.</p>
-          </div>
-          <a href="mailto:ydkim1293@hanbat.ac.kr" class="btn btn--primary">Get in touch</a>
-        </div>
       </div>
     </section>
 
     <!-- ===== Publications ===== -->
-    <section class="section" id="publications">
+    <section class="page section" id="publications">
       <div class="container">
         <div class="section__head">
-          <span class="section__kicker">Publications</span>
-          <h2 class="section__title">Selected work</h2>
-          <p class="section__subtitle">Peer-reviewed papers and patents. <span class="pub-legend"><span class="me-dot"></span> denotes lab member</span></p>
+          <h2 class="section__title">Publications</h2>
         </div>
 
         <h3 class="pub-group">International Conference</h3>
@@ -186,7 +166,7 @@
           <li class="pub">
             <p class="pub__title">Refine Pedestrian Detections by Referring to Features in Different Ways</p>
             <p class="pub__authors">Jaemyung Lee, Sihaeng Lee, <span class="me">Youngdong Kim</span>, Janghyeon Lee, Junmo Kim</p>
-            <p class="pub__venue"><span class="badge">IEEE IV 2017</span></p>
+            <p class="pub__venue"><span class="badge">IEEE Intelligent Vehicles Symposium (IV) 2017</span></p>
           </li>
           <li class="pub">
             <p class="pub__title">Identity Preserving Residual-Spatial Transformer Network</p>
@@ -251,10 +231,9 @@
     </section>
 
     <!-- ===== Lectures ===== -->
-    <section class="section section--alt" id="lectures">
+    <section class="page section section--alt" id="lectures">
       <div class="container">
         <div class="section__head">
-          <span class="section__kicker">Teaching</span>
           <h2 class="section__title">Lectures</h2>
         </div>
 
@@ -287,10 +266,9 @@
     </section>
 
     <!-- ===== Contact ===== -->
-    <section class="section" id="contact">
+    <section class="page section" id="contact">
       <div class="container">
         <div class="section__head">
-          <span class="section__kicker">Contact</span>
           <h2 class="section__title">Get in touch</h2>
         </div>
 
@@ -309,10 +287,6 @@
                 <span class="contact-label">Email</span>
                 <a href="mailto:ydkim1293@hanbat.ac.kr">ydkim1293@hanbat.ac.kr</a>
               </li>
-              <li>
-                <span class="contact-label">LinkedIn</span>
-                <a href="https://linkedin.com/in/youngdong-kim" target="_blank" rel="noopener">linkedin.com/in/youngdong-kim</a>
-              </li>
             </ul>
           </div>
           <div class="contact-map">
@@ -330,10 +304,23 @@
   <!-- ===== Footer ===== -->
   <footer class="footer">
     <div class="container footer__inner">
-      <div>
+      <div class="footer__brand">
         <span class="footer__logo">VIR Lab</span>
         <p>Visual Intelligence &amp; Reliability Lab<br />Hanbat National University</p>
       </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <p>
+          <a href="mailto:ydkim1293@hanbat.ac.kr">ydkim1293@hanbat.ac.kr</a><br />
+          <a href="tel:+82448639267">044-863-9267</a>
+        </p>
+      </div>
+      <div class="footer__col">
+        <h4>Location</h4>
+        <p>세종특별자치시 집현북로 109,<br />세종공동캠퍼스 8동 204호</p>
+      </div>
+    </div>
+    <div class="container footer__bottom">
       <p class="footer__copy">© <span id="year"></span> VIR Lab. All rights reserved.</p>
     </div>
   </footer>
