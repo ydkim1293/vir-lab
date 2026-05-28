@@ -35,7 +35,6 @@
     <!-- ===== Home (hero + research) ===== -->
     <section class="page" id="home">
       <div class="hero">
-        <div class="hero__bg" aria-hidden="true"></div>
         <div class="container hero__inner">
           <p class="hero__eyebrow">Hanbat National University · Dept. of AI Software</p>
           <h1 class="hero__title">
@@ -79,7 +78,7 @@
           <div class="join-card">
             <div>
               <h3>We're recruiting!</h3>
-              <p>VIR Lab welcomes motivated students who want to grow as AI researchers and engineers.</p>
+              <p>We welcome motivated students who want to grow as AI researchers and engineers.<br />VIR Lab is currently recruiting <strong>undergraduate interns</strong>.</p>
             </div>
             <a href="#contact" class="btn btn--primary">Get in touch</a>
           </div>
@@ -88,7 +87,7 @@
     </section>
 
     <!-- ===== People ===== -->
-    <section class="page section section--alt" id="people">
+    <section class="page section" id="people">
       <div class="container">
         <div class="section__head">
           <h2 class="section__title">People</h2>
@@ -111,16 +110,31 @@
               <div>
                 <h4>Education</h4>
                 <ul class="tl">
-                  <li><strong>Ph.D.</strong>, Electrical Engineering, KAIST <span>2016–2021 · Advisor: Junmo Kim</span></li>
-                  <li><strong>M.S.</strong>, Electrical Engineering, KAIST <span>2014–2016 · Advisor: Seong-Dae Kim</span></li>
-                  <li><strong>B.S.</strong>, Electrical Engineering, Sungkyunkwan University <span>2010–2014</span></li>
+                  <li>
+                    <div><strong>Ph.D.</strong>, Electrical Engineering, KAIST<span class="tl__sub">Advisor: Junmo Kim</span></div>
+                    <span class="tl__year">2016–2021</span>
+                  </li>
+                  <li>
+                    <div><strong>M.S.</strong>, Electrical Engineering, KAIST<span class="tl__sub">Advisor: Seong-Dae Kim</span></div>
+                    <span class="tl__year">2014–2016</span>
+                  </li>
+                  <li>
+                    <div><strong>B.S.</strong>, Electrical Engineering, Sungkyunkwan University</div>
+                    <span class="tl__year">2010–2014</span>
+                  </li>
                 </ul>
               </div>
               <div>
                 <h4>Experience</h4>
                 <ul class="tl">
-                  <li><strong>Assistant Professor</strong>, Hanbat National University <span>2025–Present</span></li>
-                  <li><strong>Staff Researcher</strong>, Samsung Electronics (SAIT → AI Center) <span>2021–2025</span></li>
+                  <li>
+                    <div><strong>Assistant Professor</strong>, Hanbat National University</div>
+                    <span class="tl__year">2025–Present</span>
+                  </li>
+                  <li>
+                    <div><strong>Staff Researcher</strong>, Samsung Electronics (SAIT → AI Center)</div>
+                    <span class="tl__year">2021–2025</span>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -137,7 +151,7 @@
         </div>
 
         <h3 class="pub-group">International Conference</h3>
-        <ol class="pub-list">
+        <ul class="pub-list">
           <li class="pub">
             <p class="pub__title">Forget What Matters, Keep the Rest: Selective Unlearning of Informative Tokens</p>
             <p class="pub__authors">Seunghee Koh, Sunghyun Baek, <span class="me">Youngdong Kim</span><sup>†</sup>, Junmo Kim<sup>†</sup></p>
@@ -156,7 +170,7 @@
           <li class="pub">
             <p class="pub__title">NLNL: Negative Learning for Noisy Labels</p>
             <p class="pub__authors"><span class="me">Youngdong Kim</span>, Junho Yim, Juseung Yun, Junmo Kim</p>
-            <p class="pub__venue"><span class="badge">ICCV 2019</span> <span class="award">🏆 Participation Award, 25th Samsung Humantech Paper Awards</span></p>
+            <p class="pub__venue"><span class="badge">ICCV 2019</span> <span class="award">Participation Award, 25th Samsung Humantech Paper Awards</span></p>
           </li>
           <li class="pub">
             <p class="pub__title">Learning from Imbalanced and Hierarchically Dual-Labeled Data</p>
@@ -173,14 +187,14 @@
             <p class="pub__authors">Donggyu Ju, <span class="me">Youngdong Kim</span>, Junmo Kim</p>
             <p class="pub__venue"><span class="badge">RiTA 2017</span></p>
           </li>
-        </ol>
+        </ul>
 
         <h3 class="pub-group">Domestic Conference</h3>
-        <ol class="pub-list">
+        <ul class="pub-list">
           <li class="pub">
             <p class="pub__title">VA-QKD: 가상 앵커를 이용한 효율적인 One-Shot W2A2 양자화</p>
             <p class="pub__authors">최범영, 조성환, 정의림, <span class="me">김영동</span></p>
-            <p class="pub__venue"><span class="badge">한국통신학회 동계종합학술발표회 2026</span> <span class="award">🏆 장려상</span></p>
+            <p class="pub__venue"><span class="badge">한국통신학회 동계종합학술발표회 2026</span> <span class="award">장려상</span></p>
           </li>
           <li class="pub">
             <p class="pub__title">YOLOv8-P2: 고해상도 특징 기반 객체 탐지 모델</p>
@@ -207,10 +221,10 @@
             <p class="pub__authors"><span class="me">김영동</span>, 강성현, 장태영, 김성대</p>
             <p class="pub__venue"><span class="badge">제28회 영상처리 및 이해에 관한 워크샵 2016</span></p>
           </li>
-        </ol>
+        </ul>
 
         <h3 class="pub-group">Patents</h3>
-        <ol class="pub-list">
+        <ul class="pub-list">
           <li class="pub">
             <p class="pub__title">Method and Device with Image-Difference Reduction Preprocessing</p>
             <p class="pub__authors"><span class="me">Youngdong Kim</span>, Byungjai Kim, Jongin Lim, Seungju Han</p>
@@ -226,12 +240,12 @@
             <p class="pub__authors">Byungjai Kim, <span class="me">Youngdong Kim</span>, Jongin Lim, Seungju Han</p>
             <p class="pub__venue"><span class="badge badge--patent">US 2024/0153070 A1</span> <span class="pub__note">2024.05.09 · Patent Pending</span></p>
           </li>
-        </ol>
+        </ul>
       </div>
     </section>
 
     <!-- ===== Lectures ===== -->
-    <section class="page section section--alt" id="lectures">
+    <section class="page section" id="lectures">
       <div class="container">
         <div class="section__head">
           <h2 class="section__title">Lectures</h2>
@@ -272,20 +286,30 @@
           <h2 class="section__title">Get in touch</h2>
         </div>
 
+        <p class="contact-lead">For questions about our research, collaboration, or joining the lab,<br />please feel free to reach out.</p>
+
         <div class="contact-grid">
           <div class="contact-info">
             <ul>
               <li>
-                <span class="contact-label">Address</span>
-                <span>세종특별자치시 집현북로 109,<br />세종공동캠퍼스 8동 204호</span>
+                <span class="contact-label">Email</span>
+                <a href="mailto:ydkim1293@hanbat.ac.kr">ydkim1293@hanbat.ac.kr</a>
               </li>
               <li>
                 <span class="contact-label">Tel</span>
                 <a href="tel:+82448639267">044-863-9267</a>
               </li>
               <li>
-                <span class="contact-label">Email</span>
-                <a href="mailto:ydkim1293@hanbat.ac.kr">ydkim1293@hanbat.ac.kr</a>
+                <span class="contact-label">Office</span>
+                <span>세종공동캠퍼스 8동 204호</span>
+              </li>
+              <li>
+                <span class="contact-label">Address</span>
+                <span>세종특별자치시 집현북로 109</span>
+              </li>
+              <li>
+                <span class="contact-label">Department</span>
+                <span>Department of Artificial Intelligence Software,<br />Hanbat National University</span>
               </li>
             </ul>
           </div>
