@@ -149,6 +149,27 @@ a { color: inherit; text-decoration: none; }
 .join-card p { color: var(--muted); }
 .join-card p strong { color: var(--text); font-weight: 600; }
 
+/* ===== Join ===== */
+.join-lead { color: var(--muted); font-size: 1.1rem; line-height: 1.6; max-width: 62ch; margin-bottom: 48px; }
+.join-lead strong { color: var(--text); font-weight: 600; }
+.join-group {
+  font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--text);
+  letter-spacing: -.2px; padding-bottom: 12px; margin-bottom: 4px; border-bottom: 1px solid var(--border);
+}
+.join-list { list-style: none; }
+.join-list li {
+  display: grid; grid-template-columns: 132px 1fr; gap: 24px; align-items: baseline;
+  padding: 18px 0; border-bottom: 1px solid var(--border);
+}
+.join-label { font-size: .78rem; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+.join-value { line-height: 1.6; }
+.join-value strong { font-weight: 600; }
+.join-deadline { color: #b1483c; }
+.join-sub { color: var(--muted); font-size: .88rem; }
+.join-sub--block { display: block; margin-top: 4px; }
+.join-link { color: var(--accent); font-weight: 600; border-bottom: 1px solid var(--border); }
+.join-link:hover { border-bottom-color: var(--accent); }
+
 /* ===== Publications ===== */
 .pub-group { margin-top: 48px; }
 .pub-group:first-of-type { margin-top: 0; }
@@ -220,6 +241,7 @@ a { color: inherit; text-decoration: none; }
   .pi-card { grid-template-columns: 1fr; gap: 24px; }
   .pi-card__photo { max-width: 180px; }
   .join-card { flex-direction: column; align-items: flex-start; }
+  .join-list li { grid-template-columns: 1fr; gap: 6px; }
   .footer__inner { grid-template-columns: 1fr; gap: 28px; }
 }
 
