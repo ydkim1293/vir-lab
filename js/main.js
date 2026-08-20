@@ -17,7 +17,11 @@
     if (!page || !page.classList.contains("page")) return false;
     pages.forEach(function (p) { p.classList.toggle("is-active", p === page); });
     navAnchors.forEach(function (a) {
-      a.classList.toggle("is-active", a.getAttribute("href") === "#" + id);
+      var children = a.getAttribute("data-children");
+      var active = children
+        ? children.split(" ").indexOf(id) !== -1
+        : a.getAttribute("href") === "#" + id;
+      a.classList.toggle("is-active", active);
     });
     if (!keepScroll) window.scrollTo(0, 0);
     return true;
@@ -56,8 +60,10 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  /* Initial page from URL hash, default to Home */
-  if (!showPage((location.hash || "").slice(1))) showPage("home");
+  /* Initial page from URL hash, default to Home. #people is the pre-split alias. */
+  var initial = (location.hash || "").slice(1);
+  if (initial === "people") initial = "faculty";
+  if (!showPage(initial)) showPage("home");
 
   /* Footer year */
   var yearEl = document.getElementById("year");

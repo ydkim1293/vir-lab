@@ -81,6 +81,25 @@ a { color: inherit; text-decoration: none; }
 }
 .nav__links a:hover::after, .nav__links a.is-active::after { width: 100%; }
 
+/* Dropdown: People > Faculty / Students */
+.nav__item { position: relative; display: flex; align-items: center; }
+.nav__sub {
+  position: absolute; top: 100%; left: -14px; min-width: 148px; margin-top: 12px;
+  display: flex; flex-direction: column;
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow); padding: 6px;
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+}
+/* invisible bridge so the menu survives the cursor crossing the gap */
+.nav__sub::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 12px; }
+.nav__item:hover .nav__sub, .nav__item:focus-within .nav__sub {
+  opacity: 1; visibility: visible; transform: none;
+}
+.nav__links .nav__sub a { padding: 8px 12px; border-radius: 6px; }
+.nav__links .nav__sub a::after { display: none; }
+.nav__links .nav__sub a:hover, .nav__links .nav__sub a.is-active { background: var(--surface); }
+
 .nav__toggle { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 8px; }
 .nav__toggle span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform .25s, opacity .25s; }
 .nav__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -119,7 +138,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ===== People ===== */
-.people__group, .pub-group, .lecture-term__title {
+.people__subgroup, .pub-group, .lecture-term__title, .join-group {
   font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--text);
   letter-spacing: -.2px; padding-bottom: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--border);
 }
@@ -132,7 +151,29 @@ a { color: inherit; text-decoration: none; }
 .pi-card__hangul { font-size: 1.1rem; color: var(--muted); font-weight: 500; margin-left: 6px; }
 .pi-card__role { color: var(--muted); margin: 8px 0 24px; }
 .pi-card__cols { display: grid; grid-template-columns: 1fr; gap: 30px; }
-.pi-card__cols h4 { font-size: .8rem; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+/* Small uppercase label — used inside cards and column headers */
+.pi-card__cols h4, .lecture-term h4, .contact-label {
+  font-size: .8rem; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.pi-card__cols h4 { margin-bottom: 8px; }
+
+.people__subgroup { margin-top: 48px; }
+.people__subgroup:first-of-type { margin-top: 0; }
+.person-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px 32px; }
+.person-card { display: grid; grid-template-columns: 96px 1fr; gap: 18px; align-items: start; }
+.person-card__photo {
+  width: 100%; aspect-ratio: 3/4; object-fit: cover;
+  border-radius: var(--radius-sm); display: block;
+}
+.person-card__photo--empty { background: var(--border); }
+.person-card__name { font-size: 1.05rem; font-weight: 600; line-height: 1.4; }
+.person-card__hangul { font-size: .85rem; color: var(--muted); font-weight: 500; margin-left: 5px; }
+.person-card__email {
+  display: inline-block; margin-top: 6px; font-size: .85rem; color: var(--muted);
+  overflow-wrap: anywhere; transition: color .15s ease;
+}
+.person-card__email:hover { color: var(--accent); }
 .tl { list-style: none; display: flex; flex-direction: column; }
 .tl li { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: baseline; padding: 12px 0; border-top: 1px solid var(--border); font-size: .96rem; line-height: 1.45; }
 .tl li:first-child { border-top: none; padding-top: 0; }
@@ -152,10 +193,7 @@ a { color: inherit; text-decoration: none; }
 /* ===== Join ===== */
 .join-lead { color: var(--muted); font-size: 1.1rem; line-height: 1.6; max-width: 62ch; margin-bottom: 48px; }
 .join-lead strong { color: var(--text); font-weight: 600; }
-.join-group {
-  font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--text);
-  letter-spacing: -.2px; padding-bottom: 12px; margin-bottom: 4px; border-bottom: 1px solid var(--border);
-}
+.join-group { margin-bottom: 4px; }
 .join-list { list-style: none; }
 .join-list li {
   display: grid; grid-template-columns: 132px 1fr; gap: 24px; align-items: baseline;
@@ -195,7 +233,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ===== Lectures ===== */
 .lecture-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
-.lecture-term h4 { font-size: .8rem; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin: 20px 0 12px; }
+.lecture-term h4 { margin: 20px 0 12px; }
 .lecture-term h4:first-of-type { margin-top: 0; }
 .lecture-term ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .lecture-term li { display: flex; align-items: center; gap: 12px; font-weight: 500; }
@@ -206,7 +244,6 @@ a { color: inherit; text-decoration: none; }
 .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 32px; align-items: stretch; }
 .contact-info ul { list-style: none; display: flex; flex-direction: column; gap: 24px; }
 .contact-info li { display: flex; flex-direction: column; gap: 4px; }
-.contact-label { font-size: .78rem; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); font-weight: 700; }
 .contact-info a:hover { color: var(--accent); }
 .contact-map { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); min-height: 280px; box-shadow: var(--shadow); }
 .contact-map iframe { width: 100%; height: 100%; min-height: 280px; border: 0; display: block; }
@@ -235,6 +272,15 @@ a { color: inherit; text-decoration: none; }
   .nav__links.is-open { transform: none; opacity: 1; pointer-events: auto; }
   .nav__links a { padding: 12px 0; font-size: 1rem; }
   .nav__links a::after { display: none; }
+
+  .nav__item { display: block; }
+  .nav__sub {
+    position: static; opacity: 1; visibility: visible; transform: none; margin-top: 0;
+    background: none; border: 0; box-shadow: none; padding: 0 0 0 16px; min-width: 0;
+  }
+  .nav__sub::before { display: none; }
+  .nav__links .nav__sub a { padding: 10px 0; font-size: .95rem; }
+  .nav__links .nav__sub a:hover, .nav__links .nav__sub a.is-active { background: none; }
 
   .research-grid, .lecture-grid, .contact-grid, .pi-card__cols { grid-template-columns: 1fr; }
   .research-grid { gap: 36px; }
