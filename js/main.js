@@ -7,9 +7,20 @@
   var pages = Array.prototype.slice.call(document.querySelectorAll("main section.page"));
   var navAnchors = Array.prototype.slice.call(links.querySelectorAll("a"));
 
+  var parentLink = links.querySelector(".nav__parent");
+  var parentItem = parentLink && parentLink.closest(".nav__item");
+  var mobile = window.matchMedia("(max-width: 860px)");
+
+  function collapseSub() {
+    if (!parentItem) return;
+    parentItem.classList.remove("is-expanded");
+    parentLink.setAttribute("aria-expanded", "false");
+  }
+
   function closeMenu() {
     links.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
+    collapseSub();
   }
 
   function showPage(id, keepScroll) {
@@ -31,6 +42,14 @@
   document.addEventListener("click", function (e) {
     var a = e.target.closest && e.target.closest('a[href^="#"]');
     if (!a) return;
+    /* On mobile "People" expands its submenu instead of navigating */
+    if (a === parentLink && mobile.matches) {
+      e.preventDefault();
+      var expanded = parentItem.classList.toggle("is-expanded");
+      parentLink.setAttribute("aria-expanded", String(expanded));
+      return;
+    }
+
     var id = a.getAttribute("href").slice(1);
     if (!id) return;
     var target = document.getElementById(id);
@@ -54,6 +73,11 @@
     var open = links.classList.toggle("is-open");
     toggle.setAttribute("aria-expanded", String(open));
   });
+
+  /* Leaving mobile width drops the expanded state the desktop menu does not use */
+  var onWidthChange = function () { if (!mobile.matches) collapseSub(); };
+  if (mobile.addEventListener) mobile.addEventListener("change", onWidthChange);
+  else if (mobile.addListener) mobile.addListener(onWidthChange);
 
   /* Shadow on nav once scrolled */
   function onScroll() { nav.classList.toggle("is-scrolled", window.scrollY > 8); }

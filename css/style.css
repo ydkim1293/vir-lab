@@ -160,8 +160,8 @@ a { color: inherit; text-decoration: none; }
 
 .people__subgroup { margin-top: 48px; }
 .people__subgroup:first-of-type { margin-top: 0; }
-.person-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px 32px; }
-.person-card { display: grid; grid-template-columns: 96px 1fr; gap: 18px; align-items: start; }
+.person-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: 24px 32px; }
+.person-card { display: grid; grid-template-columns: 120px 1fr; gap: 18px; align-items: start; }
 .person-card__photo {
   width: 100%; aspect-ratio: 3/4; object-fit: cover;
   border-radius: var(--radius-sm); display: block;
@@ -274,13 +274,31 @@ a { color: inherit; text-decoration: none; }
   .nav__links a::after { display: none; }
 
   .nav__item { display: block; }
+  /* Submenu is collapsed until "People" is tapped */
   .nav__sub {
     position: static; opacity: 1; visibility: visible; transform: none; margin-top: 0;
     background: none; border: 0; box-shadow: none; padding: 0 0 0 16px; min-width: 0;
+    display: none;
   }
+  .nav__item.is-expanded .nav__sub { display: flex; }
+  .nav__item:hover .nav__sub, .nav__item:focus-within .nav__sub { display: none; }
+  .nav__item.is-expanded:hover .nav__sub, .nav__item.is-expanded:focus-within .nav__sub { display: flex; }
   .nav__sub::before { display: none; }
+  /* Submenu sits tighter than the top-level rhythm (20px vs 24px) ... */
   .nav__links .nav__sub a { padding: 10px 0; font-size: .95rem; }
+  .nav__item.is-expanded .nav__parent { padding-bottom: 10px; }
+  /* ... but the gap back out to the next top-level link keeps the 24px */
+  .nav__links .nav__sub a:last-child { padding-bottom: 12px; }
   .nav__links .nav__sub a:hover, .nav__links .nav__sub a.is-active { background: none; }
+
+  /* Caret shows the item expands */
+  .nav__parent { display: flex; align-items: center; gap: 8px; }
+  .nav__parent::before {
+    content: ""; order: 2; width: 7px; height: 7px;
+    border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+    transform: translateY(-2px) rotate(45deg); transition: transform .2s ease;
+  }
+  .nav__item.is-expanded .nav__parent::before { transform: translateY(1px) rotate(-135deg); }
 
   .research-grid, .lecture-grid, .contact-grid, .pi-card__cols { grid-template-columns: 1fr; }
   .research-grid { gap: 36px; }

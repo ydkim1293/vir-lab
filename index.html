@@ -21,8 +21,8 @@
       <nav class="nav__links" id="navLinks">
         <a href="#home">Home</a>
         <div class="nav__item">
-          <a href="#faculty" class="nav__parent" data-children="faculty students">People</a>
-          <div class="nav__sub">
+          <a href="#faculty" class="nav__parent" data-children="faculty students" aria-expanded="false" aria-controls="navSub">People</a>
+          <div class="nav__sub" id="navSub">
             <a href="#faculty">Faculty</a>
             <a href="#students">Students</a>
           </div>
@@ -186,8 +186,7 @@
         <h3 class="people__subgroup">Undergraduate Researchers</h3>
         <div class="person-grid">
           <article class="person-card">
-            <!-- Replace with: <img class="person-card__photo" src="assets/jingyeong-lee.jpg" alt="Jin Gyeong Lee" loading="lazy" /> -->
-            <div class="person-card__photo person-card__photo--empty" aria-hidden="true"></div>
+            <img class="person-card__photo" src="assets/jingyeong-lee.jpg" alt="Jin Gyeong Lee" loading="lazy" />
             <div class="person-card__body">
               <h4 class="person-card__name">Jin Gyeong Lee <span class="person-card__hangul">이진경</span></h4>
               <a class="person-card__email" href="mailto:20221066@edu.hanbat.ac.kr">20221066@edu.hanbat.ac.kr</a>
@@ -198,8 +197,7 @@
         <h3 class="people__subgroup">Undergraduate Interns</h3>
         <div class="person-grid">
           <article class="person-card">
-            <!-- Replace with: <img class="person-card__photo" src="assets/naekyung-kim.jpg" alt="Naekyung Kim" loading="lazy" /> -->
-            <div class="person-card__photo person-card__photo--empty" aria-hidden="true"></div>
+            <img class="person-card__photo" src="assets/naekyung-kim.jpg" alt="Naekyung Kim" loading="lazy" />
             <div class="person-card__body">
               <h4 class="person-card__name">Naekyung Kim <span class="person-card__hangul">김내경</span></h4>
               <a class="person-card__email" href="mailto:20221044@edu.hanbat.ac.kr">20221044@edu.hanbat.ac.kr</a>
